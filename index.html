@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub Profile Finder</title>
+    <link rel="shortcut icon" href="images.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="min-h-screen bg-slate-950 text-white">
+    <div class="container mx-auto px-4 py-[4rem]">
+      <div class="flex justify-center md:justify-start md:ml-[15rem] mb-10">
+        <div class="text-left">
+          <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-3">
+            GitHub Profile Finder
+          </h1>
+          <p class="text-gray-400 text-lg">
+            Discover GitHub profiles and explore their repositories
+          </p>
+        </div>
+      </div>
+      <div class="flex flex-col items-center gap-4">
+        <div
+          class="flex flex-col sm:flex-row justify-center gap-3 w-full max-w-3xl"
+        >
+          <input
+            type="text"
+            id="username"
+            placeholder="Enter a GitHub username..."
+            class="w-full min-w-0 sm:flex-1 px-4 py-3 rounded-xl bg-slate-800 border-2 border-slate-700 outline-none focus:border-amber-300"
+          />
+
+          <button
+            id="searchBtn"
+            class="w-full sm:w-auto bg-amber-300 text-slate-950 hover:bg-yellow-400 px-6 py-3 rounded-xl font-semibold transition"
+          >
+            Search
+          </button>
+        </div>
+        <div
+          class="flex flex-wrap justify-start w-full max-w-3xl mt-3 mx-auto items-center gap-3 text-sm"
+        >
+          <span class="text-gray-400">Try:</span>
+
+          <button
+            class="text-sky-300 px-4 py-1 border-mist-100 hover:border-sky-900 border-1 border-solid rounded-xl"
+            onclick="quickSearch('Rowanmahmoudibrahim')"
+          >
+            Rowanmahmoudibrahim
+          </button>
+
+          <button
+            class="text-sky-300 px-4 py-1 border-mist-100 hover:border-sky-900 border-1 border-solid rounded-xl"
+            onclick="quickSearch('YoussefTurkey')"
+          >
+            YoussefTurkey
+          </button>
+
+          <button
+            class="text-sky-300 px-4 py-1 hover:border-sky-900 border-mist-100 border-1 border-solid rounded-xl"
+            onclick="quickSearch('torvalds')"
+          >
+            torvalds
+          </button>
+        </div>
+      </div>
+      <button
+        id="extraButton"
+        class="block w-5/8 mx-auto mt-17 px-6 py-6 rounded-3xl bg-slate-800 border-2 border-slate-700"
+      ></button>
+      <div id="loading" class="hidden text-center mt-10">
+        <div
+          class="w-10 h-10 border-4 border-slate-700 border-t-amber-300 rounded-full animate-spin mx-auto"
+        ></div>
+        <p class="text-gray-400 mt-4">Searching GitHub...</p>
+      </div>
+      <div id="profile" class="hidden mt-10"></div>
+      <div id="repositories" class="hidden mt-8"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
